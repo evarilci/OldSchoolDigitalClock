@@ -27,7 +27,7 @@ struct DaysOfWeekView: View {
                     .font(.headline)
                   
                     // If it matches today, full opacity; otherwise 0.3
-                    .opacity(day == today ? 1.0 : 0.3)
+                    .opacity(day == today ? 1.0 : 0.25)
                    
             }
         }

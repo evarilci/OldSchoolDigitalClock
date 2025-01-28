@@ -143,7 +143,7 @@ struct SegmentView: View {
     
     var body: some View {
         RoundedRectangle(cornerRadius: 2)
-            .fill(isLit ? Globals.neonColor : Color.init(uiColor: .darkGray.withAlphaComponent(0.35)))
+            .fill(isLit ? Globals.neonColor : Color.init(uiColor: .darkGray.withAlphaComponent(0.15)))
             
         // Add a subtle glow if lit
             .shadow(color: isLit ? Globals.neonColor.opacity(0.9) : .clear, radius: isLit ? 10 : 0)

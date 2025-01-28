@@ -13,3 +13,6 @@ class Globals {
     
     
 }
+extension Color {
+    static let neonGreen = Color(red: 0.0, green: 0.9, blue: 0.1)
+}
