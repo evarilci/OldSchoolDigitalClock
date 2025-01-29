@@ -14,30 +14,52 @@ struct ContentView: View {
     @State var vi = ClockView()
     var body: some View {
         
-        TabView {
-            Tab("Watch", systemImage: "applewatch.case.inset.filled") {
-                ClockView()
-                   
-            }
-            
+        
+        if #available(iOS 18.0, *) {
+            TabView {
+                Tab("Watch", systemImage: "applewatch.case.inset.filled") {
+                    ClockView()
+                       
+                }
+                
 
-            Tab("Alarm", systemImage: "alarm.fill") {
+                Tab("Alarm", systemImage: "alarm.fill") {
+                    AlarmList()
+                }
+
+
+                Tab("Music", systemImage: "music.note.list") {
+                    MusicList()
+                }
+                
+            }
+            .tabViewStyle(.sidebarAdaptable)
+            .tint(.green)
+        } else {
+            
+            TabView {
+                    ClockView()
+                    .tabItem {
+                        Label("Watch", systemImage: "applewatch.case.inset.filled")
+                            
+                    }
                 AlarmList()
-            }
-
-
-            Tab("Music", systemImage: "music.note.list") {
+                    .tabItem {
+                        Label("Alarm", systemImage: "alarm.fill")
+                            
+                    }
                 MusicList()
+                    .tabItem {
+                        Label("Music", systemImage: "music.note.list")
+                           
+                    }
+                
             }
-            
-        }
-        .tabViewStyle(.sidebarAdaptable)
-        .tint(.green)
-        
-        
-    }
-    
+            .tabViewStyle(.automatic)
+            .accentColor(.green)
 
+        }
+    }
 }
 
 #Preview {

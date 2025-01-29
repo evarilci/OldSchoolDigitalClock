@@ -21,15 +21,24 @@ struct DigitalClockView: View {
             DigitView(digit: currentTime.hours % 10)
             
             // Colon
-            Text(":")
-                .foregroundStyle(Globals.neonColor)
-                .font(.system(size: 32, weight: .heavy))
+            VStack {
+                Text(".")
+                  
+                Text(".")
+                   
+                    
+            }
+            .foregroundStyle(Globals.neonColor)
+            .font(.system(size: 32, weight: .heavy))
             
             // Minutes
             DigitView(digit: currentTime.minutes / 10)
             DigitView(digit: currentTime.minutes % 10)
             
-            Text(":")
+            VStack {
+                Text(".")
+                Text(".")
+            }
                 .foregroundStyle(Globals.neonColor)
                 .font(.system(size: 32, weight: .heavy))
             

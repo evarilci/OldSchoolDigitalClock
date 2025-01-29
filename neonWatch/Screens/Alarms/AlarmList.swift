@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct AlarmList: View {
+    @State private var username: String = ""
+    @State private var email: String = ""
+    @State private var password: String = ""
     var body: some View {
         NavigationView {
             List {
-                Text("Alarm 1")
-                Text("Alarm 2")
-                Text("Alarm 3")
+                FloatingTextField(text: $username, placeholder: "Username")
+                FloatingTextField(text: $email, placeholder: "Email")
+                FloatingTextField(text: $password, placeholder: "Password")
             }
             .navigationBarTitle("Alarms")
         }
